@@ -1,0 +1,46 @@
+<div class="dialog">
+  <div class="mx-4 my-4">
+    <form [formGroup]="itemForm">
+      <div class="mb-3">
+        <label class="form-label" for="name">Item Name : </label>
+        <input
+          class="mt-2 form-control"
+          type="text"
+          formControlName="name"
+          id="name"
+          [ngModel]="name"
+        />
+      </div>
+
+      <div class="mb-3">
+        <label class="form-label" for="quantity">Item Quantity : </label>
+        <input
+          class="mt-2 form-control"
+          type="number"
+          formControlName="quantity"
+          id="quantity"
+          min="1"
+        />
+      </div>
+      <div class="mb-3">
+        <label class="form-label" for="min_quantity">Minimum Quantity : </label>
+        <input
+          class="mt-2 form-control"
+          type="number"
+          formControlName="min_quantity"
+          id="min_quantity"
+          min="1"
+        />
+      </div>
+      <div class="d-grid">
+        <button
+          class="btn btn-success mt-2"
+          [disabled]="!itemForm.valid"
+          (click)="createItem()"
+        >
+          New Item
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

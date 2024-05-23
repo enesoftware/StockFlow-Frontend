@@ -1,0 +1,37 @@
+<div class="d-flex flex-wrap">
+  @for (report of reports; track $index) { @if(report.active == true){
+  <!-- <div class="card align-items-center" style="width: 18rem">
+    <div class="card-body overflow-auto">
+      <div class="m-2">
+        <h5 class="card-title">{{ report.itemName | uppercase }}</h5>
+        <hr />
+        <p class="card-text">{{ report.userName }} {{ report.userLastName }}</p>
+        <hr />
+        <p class="card-text">{{ report.userEmail }}</p>
+        <hr />
+        <p class="card-text">{{ report.description }}</p>
+      </div>
+    </div>
+  </div> -->
+
+  <div class="card ms-4 mt-4" style="width: 18rem">
+    <div class="card-body">
+      <h5 class="card-title">{{ report.itemName | uppercase }}</h5>
+      <ul class="list-group list-group-flush">
+        <div>
+          <label for="card-text"> Employee:</label>
+        </div>
+        <li class="list-group-item mt-2">
+          {{ report.userName }} {{ report.userLastName }}
+        </li>
+        <div class="mt-2">
+          <label for="card-text"> Description:</label>
+        </div>
+        <li class="list-group-item mt-2">
+          {{ report.description }}
+        </li>
+      </ul>
+    </div>
+  </div>
+  }}
+</div>

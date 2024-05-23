@@ -1,0 +1,16 @@
+<div class="dialog">
+  <div class="mx-4 my-4">
+    <p class="fs-6">Are you sure you want to delete it?</p>
+    <div class="d-grid gap-2" role="group" aria-label="Basic example">
+      <button type="button" (click)="yes()" class="btn btn-danger">Yes</button>
+      <button
+        type="button"
+        (click)="no()"
+        [mat-dialog-close]="true"
+        class="btn btn-info"
+      >
+        No
+      </button>
+    </div>
+  </div>
+</div>

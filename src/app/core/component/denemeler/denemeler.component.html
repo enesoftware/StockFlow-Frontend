@@ -1,0 +1,23 @@
+<div class="container w-75 h-auto mt-5 pt-5">
+  <table
+    datatable
+    class="table row-border hover"
+    [dtOptions]="dtOptions"
+    [dtTrigger]="dtTrigger"
+  >
+    <thead>
+      <tr>
+        <th>no</th>
+        <th>Quantity</th>
+        <th>Item</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let shelf of results">
+        <td>{{ shelf.no }}</td>
+        <td>{{ shelf.quantity }}</td>
+        <td>{{ shelf.itemName }}</td>
+      </tr>
+    </tbody>
+  </table>
+</div>

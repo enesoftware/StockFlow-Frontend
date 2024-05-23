@@ -1,0 +1,65 @@
+<div class="dialog">
+  <div class="mx-4 my-4">
+    <form [formGroup]="userForm">
+      <div class="mb-3">
+        <label for="name" class="form-label">Name : </label>
+        <input
+          class="mt-2 form-control"
+          type="text"
+          name="name"
+          formControlName="name"
+          id="name"
+          required
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="lastName" class="form-label">Lastname : </label>
+        <input
+          class="mt-2 form-control"
+          type="text"
+          name="lastName"
+          formControlName="lastName"
+          id="lastName"
+          required
+        />
+      </div>
+
+      <div>
+        <label for="email" class="form-label">Email : </label>
+        <input
+          class="mt-2 form-control"
+          type="text"
+          name="email"
+          formControlName="email"
+          id="email"
+          required
+        />
+      </div>
+
+      <div>
+        <label for="role" class="form-label">Role : </label>
+        <select
+          class="form-select"
+          name="role"
+          formControlName="role"
+          id="role"
+        >
+          <option [ngValue]="1">admin</option>
+          <option [ngValue]="2">depo_sorumlusu</option>
+          <option [ngValue]="3">rapor_kullanıcısı</option>
+        </select>
+      </div>
+
+      <div class="d-grid">
+        <button
+          class="btn btn-success mt-4"
+          (click)="addUser()"
+          [disabled]="userForm.invalid"
+        >
+          Add Employee
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

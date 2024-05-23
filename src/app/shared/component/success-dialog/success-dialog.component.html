@@ -1,0 +1,26 @@
+<div class="dialog">
+  <div class="my-4 mx-4">
+    <label class="form-label" for="pw">New Password : </label>
+    <div class="input-group">
+      <input
+        id="pw"
+        type="text"
+        class="form-control"
+        aria-describedby="button-addon2"
+        readonly
+        value="{{ password }}"
+      />
+      <button
+        (click)="copyContent(password)"
+        class="btn btn-outline-success"
+        type="button"
+        id="button-addon2"
+      >
+        <span class="material-symbols-outlined"> content_copy </span>
+      </button>
+    </div>
+    <div class="d-grid mt-3">
+      <button class="btn btn-danger" [mat-dialog-close]="true">Close</button>
+    </div>
+  </div>
+</div>

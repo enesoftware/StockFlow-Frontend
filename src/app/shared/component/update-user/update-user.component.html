@@ -1,0 +1,74 @@
+<div class="dialog">
+  <div class="mx-4 my-4">
+    <form [formGroup]="userForm">
+      <div class="mb-3">
+        <label for="name" class="form-label">Name : </label>
+        <input
+          class="mt-2 form-control"
+          type="text"
+          name="name"
+          formControlName="name"
+          id="name"
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="lastName" class="form-label">Lastname : </label>
+        <input
+          class="mt-2 form-control"
+          type="text"
+          name="lastName"
+          formControlName="lastName"
+          id="lastName"
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="email" class="form-label">Email : </label>
+        <input
+          class="mt-2 form-control"
+          type="text"
+          name="email"
+          formControlName="email"
+          id="email"
+          readonly
+        />
+      </div>
+
+      <div class="mb-3">
+        <label for="role" class="form-label">Role : </label>
+        <select
+          class="form-select"
+          name="role"
+          formControlName="role"
+          id="role"
+        >
+          <option [ngValue]="1">admin</option>
+          <option [ngValue]="2">depo_sorumlusu</option>
+          <option [ngValue]="3">rapor_kullanıcısı</option>
+        </select>
+      </div>
+
+      <div class="mb-3 form-check">
+        <input
+          class="form-check-input"
+          type="checkbox"
+          id="password"
+          formControlName="boolean"
+        />
+        <label for="password" class="form-check-label">
+          Reset Password ?
+        </label>
+      </div>
+      <div class="d-grid">
+        <button
+          class="btn btn-info mt-2"
+          [disabled]="userForm.invalid"
+          (click)="updateUser()"
+        >
+          Update Employee
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

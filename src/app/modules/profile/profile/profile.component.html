@@ -1,0 +1,156 @@
+<div class="container w-50 mt-5 grid rounded profile" id="newPassword">
+  <form class="mb-3 pb-2" [formGroup]="userForm">
+    <div class="mb-3 mt-2">
+      <label for="email" class="form-label mt-3">Email address</label>
+      <input
+        type="email"
+        class="form-control email disable"
+        name="email"
+        id="email"
+        formControlName="email"
+        readonly
+      />
+    </div>
+    <div class="mb-3">
+      <label for="role" class="form-label">Role</label>
+      <input
+        type="text"
+        class="form-control disable"
+        name="role"
+        id="role"
+        readonly
+        formControlName="role"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="oldPassword" class="form-label">Old Password</label>
+      <input
+        type="text"
+        class="form-control"
+        name="oldPassword"
+        id="oldPassword"
+        formControlName="oldPassword"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="newPassword" class="form-label">New Password</label>
+      <input
+        type="text"
+        class="form-control"
+        name="newPassword"
+        id="newPassword"
+        formControlName="newPassword"
+      />
+    </div>
+    <div class="mb-3">
+      <label for="newPasswordControl" class="form-label"
+        >New Password Again</label
+      >
+      <input
+        type="text"
+        class="form-control"
+        name="newPasswordControl"
+        id="newPasswordControl"
+        formControlName="newPasswordControl"
+      />
+    </div>
+    <!-- VALIDATOR -->
+
+    <ol class="mt-2" style="list-style-type: square">
+      <li class="text-light d-flex align-items-center">
+        Passwords must match
+        <span
+          *ngIf="userForm.errors?.['mismatch']"
+          class="material-symbols-outlined red ms-1"
+        >
+          close
+        </span>
+        <span
+          *ngIf="!userForm.errors?.['mismatch']"
+          class="material-symbols-outlined green ms-1"
+        >
+          check
+        </span>
+      </li>
+
+      <li class="text-light d-flex align-items-center">
+        Password must contain at least 1 lowercase character
+        <span
+          *ngIf="userForm.errors?.['letter']"
+          class="material-symbols-outlined red ms-1"
+        >
+          close
+        </span>
+        <span
+          *ngIf="!userForm.errors?.['letter']"
+          class="material-symbols-outlined green ms-1"
+        >
+          check
+        </span>
+      </li>
+
+      <li class="text-light d-flex align-items-center">
+        Password must contain at least 1 digit
+        <span
+          *ngIf="userForm.errors?.['digit']"
+          class="material-symbols-outlined red ms-1"
+        >
+          close
+        </span>
+        <span
+          *ngIf="!userForm.errors?.['digit']"
+          class="material-symbols-outlined green ms-1"
+        >
+          check
+        </span>
+      </li>
+
+      <li class="text-light d-flex align-items-center">
+        Password must contain at least 1 uppercase character
+        <span
+          *ngIf="userForm.errors?.['letterBig']"
+          class="material-symbols-outlined red ms-1"
+        >
+          close
+        </span>
+        <span
+          *ngIf="!userForm.errors?.['letterBig']"
+          class="material-symbols-outlined green ms-1"
+        >
+          check
+        </span>
+      </li>
+
+      <li class="text-light d-flex align-items-center">
+        The password must consist of at least 8 characters
+        <span
+          *ngIf="userForm.errors?.['minLength']"
+          class="material-symbols-outlined red ms-1"
+        >
+          close
+        </span>
+        <span
+          *ngIf="!userForm.errors?.['minLength']"
+          class="material-symbols-outlined green ms-1"
+        >
+          check
+        </span>
+      </li>
+    </ol>
+
+    <!-- VALIDATOR -->
+    <div class="d-grid gap-2 mb-2">
+      <button
+        type="button"
+        class="btn btn-primary"
+        (click)="submit()"
+        [disabled]="userForm.invalid"
+      >
+        Save Changes
+      </button>
+      <button type="button" class="btn btn-danger" (click)="reset()">
+        Reset All
+      </button>
+    </div>
+  </form>
+</div>

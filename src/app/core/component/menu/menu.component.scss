@@ -1,0 +1,22 @@
+
+  
+  #logo{
+    margin-right: 1rem;
+  }
+
+  // dropdown ▼ kaldırma
+  .dropdown-toggle{
+    &:after{
+      content: none;
+    }
+  }
+
+  .dropstart .dropdown-toggle::before{
+    content: none;
+}
+
+.logout{
+  padding-right: 4px;
+  margin-top: 3px;
+  cursor: pointer;
+}

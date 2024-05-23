@@ -1,0 +1,36 @@
+<div class="dialog">
+  <div class="mx-4 my-4">
+    <form [formGroup]="iteminoutForm">
+      <div class="mt-2">
+        <label for="quantity" class="form-label"> {{ question }} </label>
+        <input
+          class="form-control"
+          id="quantity"
+          type="number"
+          max="999"
+          min="1"
+          formControlName="quantity"
+        />
+      </div>
+      <div class="d-grid">
+        @if (buttonName == 'Add Item') {
+        <button
+          class="btn btn-success mt-2"
+          [disabled]="iteminoutForm.invalid"
+          (click)="itemInOut()"
+        >
+          {{ buttonName }}
+        </button>
+        }@else {
+        <button
+          class="btn btn-danger mt-2"
+          [disabled]="iteminoutForm.invalid"
+          (click)="itemInOut()"
+        >
+          {{ buttonName }}
+        </button>
+        }
+      </div>
+    </form>
+  </div>
+</div>

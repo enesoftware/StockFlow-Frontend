@@ -1,0 +1,24 @@
+<div class="dialog">
+  <div class="mx-4 my-4">
+    <div class="mb-3">
+      <label class="form-label" for="count">Shelves to create :</label>
+      <input
+        id="count"
+        class="mt-2 form-control"
+        type="number"
+        max="50"
+        min="1"
+        placeholder="1"
+        [(ngModel)]="count"
+        aria-describedby="inputHelp"
+      />
+      <small id="inputHelp" class="form-text text-muted fst-italic"
+        >Max shelf = 50</small
+      >
+    </div>
+
+    <div class="d-grid">
+      <button class="btn btn-success" (click)="addShelf()">Add shelf</button>
+    </div>
+  </div>
+</div>

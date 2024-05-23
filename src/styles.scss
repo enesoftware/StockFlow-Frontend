@@ -1,0 +1,367 @@
+$edit-color: #E9C874;
+$delete-color: #A34343;
+$disabled-color :#808080 ;
+$report-color :#0B6623 ;
+$plus-color: #00b436;
+$minus-color: #fc998c;
+$navy-color:#1B3856;
+$input-bg-color:#121212;
+$navbar-light: #9EC8B9;
+$navbar-dark:#1B4242;
+$bg-light : #fdf6eb;
+$bg-dark: #212529;
+//////////////////////////
+
+html, body { height: 100%; }
+body { margin: 0; font-family:Poppins, Roboto, "Helvetica Neue", sans-serif; }
+
+@media screen and (min-width: 992px) {
+  .navbar {
+    padding: 0;
+  }
+}
+
+@media screen and (max-width: 991px) {
+  .navbar-nav {
+    padding-top: 0.5em;
+  }
+}
+
+.title-box {
+    padding: 2rem 1.5rem 0 1.5rem;
+    text-align: center;
+}
+
+.icon:hover{
+  cursor: pointer;
+  transform: scale(1.2);
+}
+.edit{
+  color: rgba($edit-color,1.0);
+  &:hover{
+    color: rgba($edit-color, 0.7);
+  }
+  
+}
+.delete{
+  color: rgba($delete-color,1.0);
+  &:hover{
+    color: rgba($delete-color, 0.7);
+  }
+}
+.plus{
+  color: rgba($plus-color,1.0);
+  &:hover{
+    color: rgba($plus-color, 0.7);
+  }
+}
+.minus{
+  color: rgba($minus-color,1.0);
+  &:hover{
+    color: rgba($minus-color, 0.7);
+  }
+}
+.report{
+  color: rgba($report-color,1.0);
+  &:hover{
+    color: rgba($report-color, 0.7);
+  }
+}
+.disable{
+  pointer-events: none;
+  color: rgba($disabled-color, 0.6);
+  }
+  .mt-4 * td{
+    font-size: 1rem;
+  }
+
+.blurBackGround{
+  filter: blur(1px);
+  background-color:rgb(91 91 91 / 71%);
+  opacity: 2 !important;
+}
+
+//////////////////////////
+
+// Dark mode css'leri
+[data-bs-theme="dark"] {
+
+  --bs-body-bg:#212529;
+  
+  .table{
+    --bs-table-bg: #171a1c;
+    --bs-table-color:white; 
+    border: 1px solid $navy-color;
+    vertical-align: middle;
+  }
+
+  .table-striped>tbody>tr:nth-of-type(odd)>*{
+    --bs-table-color-type:white;
+  }
+
+  .mat-mdc-table .mat-mdc-header-cell{
+    background-color: $bg-dark;
+    color: white;
+  }
+
+  .mat-mdc-paginator-container{
+    background-color: $bg-dark;
+    color: white;
+  }
+
+  .mat-mdc-select,.mat-sort-header-arrow{
+    color:white !important;
+  }
+
+  .mat-mdc-paginator-icon{
+    fill: white;
+  }
+
+  .mat-mdc-select-arrow svg{
+    fill:white;
+  }
+
+  .mdc-text-field{
+    border: 1px solid white;
+    border-radius: 6px;
+  }
+
+  .mat-form-field-appearance-outline .mat-form-field-outline {
+    color: white !important;
+  }
+
+  input.mat-input-element {
+    color: white !important;
+  }
+
+  .mat-mdc-select-panel{
+    background-color: $bg-dark;
+  }
+
+  .mat-mdc-option{
+    color:white;
+  }
+
+  .form-control{
+    margin-bottom:1rem ;
+    border:1px solid $navy-color;
+    &:focus{
+        outline: none !important;
+        box-shadow: 0 0px 2px 1px rgba(0, 0, 0, 0.8) ;
+    }
+    border-radius: 12px;
+    padding: 0.4rem;
+     background-color: $input-bg-color;
+  }
+
+  .dialog{
+    background-color: $bg-dark;
+  }
+
+  .btn-outline-success{
+    border: 1px solid #1B3856;
+    color:#ffffff;
+    background-color: $input-bg-color;
+    &:hover{
+    color: white;
+    background-color: #1B3856;
+    }
+  }
+
+  ol{
+    background-color: $input-bg-color;
+    border-radius: 10px;
+    border: 1px solid #1B3856;
+    list-style-type: none;
+    padding: 1rem;
+  }
+
+  .profile{
+      background-color: #2d3339;
+      border: 1px solid $navy-color;
+      border-radius: 4px ;
+  }
+  .container > label{
+      color:black;
+  }
+  .navbar .navbar-nav .nav-link {
+    color: #000;
+    font-size: 1.1em;
+    padding: 0.8em;
+  }
+  .navbar {
+    border-bottom: 5px solid #1B3856;
+    background-color: $navbar-dark;
+  }
+
+  .navbar .navbar-nav .nav-link.active {
+    background-color: #1B3856;
+    color: #fff;
+  }
+
+  // profil düğmesi menüsü
+  .dropstart > ul{
+    background-color: $bg-dark;
+    color: white;
+   
+  }
+
+  .dropstart > ul > li{
+    &:hover{
+      a{
+        color: $navbar-dark;
+        background-color:var(--bs-body-bg);
+        cursor: pointer;
+      }
+    }
+  }
+
+  .searchBox{
+    border: 2px solid $navy-color;
+    background-color: $input-bg-color;
+    border-radius: 6px;
+    padding: 0.5rem;
+    &:focus{
+      outline: none;
+      box-shadow:0 0px 2px 1px rgba(0, 0, 0, 0.8) ;
+    }
+  }
+
+  .card {
+    background-color: #2d3339;
+    border: 1px solid $navy-color;
+  }
+  .card-title{
+    text-align: center;
+  }
+
+  .card-body > ul > li{
+    background-color:$bg-dark;
+    border : 1px solid $navy-color;
+    border-radius: 6px;
+  }
+}
+
+ /// Light mode css'leri
+[data-bs-theme="light"]{
+
+   --bs-body-bg:#fdf6eb;
+
+  .mat-mdc-table .mat-mdc-header-cell {
+    color: black;
+  }
+
+  .mat-mdc-paginator-container{
+    color:black;
+  }
+
+  .table{
+    border: 1px solid #E0E0E0;
+    vertical-align: middle;
+  }
+
+  .btn-outline-success{
+    border: 1px solid #1B3856;
+    color:#1B3856;
+    &:hover{
+    color: white;
+    background-color: #1B3856;
+    }
+  }
+
+  ol{
+    background-color: #1B4242;
+    border-radius: 10px;
+    border: 1px solid #1B3856;
+    list-style-type: none;
+    padding: 1rem;
+  }
+
+  .profile{
+      background-color: #347f7f;
+      border: 1px solid $navy-color;
+      border-radius: 4px ;  
+  }
+
+  .container > label{
+      color:black;
+  }
+
+  .navbar .navbar-nav .nav-link {
+    color: #000;
+    font-size: 1.1em;
+    padding: 0.8em;
+  }
+  .navbar {
+    border-bottom: 5px solid #1B3856;
+    background-color: $navbar-light;
+  }
+  
+  .navbar .navbar-nav .nav-link.active {
+    background-color: #1B3856;
+    color: #fff;
+  }
+
+  .form-control{
+    margin-bottom:1rem ;
+    border:1px solid $navy-color;
+    &:focus{
+        outline: none !important;
+        box-shadow: 0 0px 2px 1px rgba(0, 0, 0, 0.8) ;
+    }
+    border-radius: 12px;
+    padding: 0.4rem;
+    color:black;
+  }
+
+  // profil düğmesi menüsü
+  .dropstart > ul{
+    background-color: white;
+    color: black;
+   
+  }
+  .dropstart > ul > li{
+    &:hover{
+      a{
+        color: $navbar-light;
+        background-color: white;
+        cursor: pointer;
+      }
+    }
+  }
+
+  .searchBox{
+    border: 2px solid $navy-color;
+    border-radius: 6px;
+    padding: 0.5rem;
+    background-color: #fdf6eb;
+    &:focus{
+      outline: none;
+      box-shadow:0 0px 2px 1px rgba(0, 0, 0, 0.8) ;
+    }
+  }
+
+  .mat-mdc-table .mat-mdc-header-cell{
+    background-color: $bg-light;
+    color: black;
+  }
+
+  .mat-mdc-paginator-container{
+    background-color: $bg-light;
+    color: black;
+  }
+
+  .card {
+    background-color: #347f7f;
+    border: 1px solid $navy-color;
+  }
+  .card-title{
+    text-align: center;
+  }
+
+  .card-body > ul > li{
+    background-color:$bg-light;
+    border : 1px solid $navy-color;
+    border-radius: 6px;
+  }
+}
